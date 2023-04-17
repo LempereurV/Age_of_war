@@ -6,11 +6,10 @@
 
 class pratique{
     int x;
-    int pos;
     int vie;
     int camp;
 public:
-    pratique creer(int pos,int camp);
+    void creer(int pos,int c);
     void attaquer(pratique ennemi);
     void mourir();
 };
