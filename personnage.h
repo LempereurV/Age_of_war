@@ -8,10 +8,9 @@ class pratique{
     int x;
     int pos;
     int vie;
-    int posfile;
     int camp;
 public:
-    pratique creer(int pos);
+    pratique creer(int pos,int camp);
     void attaquer(pratique ennemi);
     void mourir();
 };
