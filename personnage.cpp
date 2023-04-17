@@ -4,10 +4,7 @@
 #include<vector>
 using namespace std ;
 
-vector<pratique> armee1;
-vector<pratique> armee2;
-
-void pratique::creer(int pos, int c){
+void pratique::creer(int pos, int c,vector<pratique> armee1,vector<pratique> armee2){
     int x0=0;
     if (camp==1)
         x0=100;
@@ -21,3 +18,12 @@ void pratique::creer(int pos, int c){
     else
         armee2.push_back(soldat);
 };
+
+void pratique::avancer(vector<pratique> armee1, vector<pratique> armee2){
+    for (auto it = armee1.begin(); it != armee1.end(); ++it) {
+        x+=1;
+      }
+    for (auto it = armee2.begin(); it != armee2.end(); ++it){
+        x-=1;
+    }
+}
