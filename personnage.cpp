@@ -1,3 +1,8 @@
 #include "personnage.h"
+#include <iostream>
 
-personnage::creer()
+pratique pratique::creer(int pos){
+    pratique soldat(0,pos,file.size()+1,);
+};
+
+std::queue
