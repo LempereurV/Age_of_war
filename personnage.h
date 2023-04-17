@@ -3,4 +3,4 @@
 
 #endif // PERSONNAGE_H
 
-class personnage{int x;int pos;int vie;int file;};
+class pratique{int x;int pos;int vie;int file;};

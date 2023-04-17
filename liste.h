@@ -1,7 +1,7 @@
 #ifndef LISTE_H
 #define LISTE_H
 
-struct personnage{int viemax; int force; int epoque; int portee; int frequence;}
+struct theorique{int viemax; int force; int epoque; int portee; double frequence;int cout; int prime;}
 
                  ;
 
