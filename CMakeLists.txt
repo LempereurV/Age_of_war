@@ -15,5 +15,6 @@ find_package(Qt5Core)
 
 add_executable(Projet_test
   main.cpp
-personnage.h personnage.cpp liste.h liste.cpp)
+personnage.h personnage.cpp liste.h liste.cpp
+tourelle.h)
 target_link_libraries(Projet_test Qt${QT_VERSION_MAJOR}::Core)
