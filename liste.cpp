@@ -1,4 +1,4 @@
-#include "liste.h"
+#include "theorique.h"
 
 theorique global[16]={
     {40,7,0,3,1,15,20,1.5,2}, //clubman

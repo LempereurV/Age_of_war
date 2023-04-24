@@ -1,6 +1,6 @@
-#include "personnage.h"
-#include <iostream>
 #include "liste.cpp"
+#include "pratique.h"
+#include <iostream>
 #include<vector>
 using namespace std ;
 
@@ -27,3 +27,4 @@ void pratique::avancer(vector<pratique> armee1, vector<pratique> armee2){
         x-=1;
     }
 }
+
