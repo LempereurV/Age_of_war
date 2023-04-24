@@ -25,7 +25,7 @@ void pratique::avancer(vector<pratique> armee1, vector<pratique> armee2){
     if(abs(armee1[0].x-armee2[0].x)<2){
         for (auto it = armee1.begin(); it != armee1.end(); ++it) {
             x+=1;
-          }
+        }
         for (auto it = armee2.begin(); it != armee2.end(); ++it){
             x-=1;
         }
@@ -47,3 +47,19 @@ void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2){
     else
         armee2.pop_back();
 }
+
+void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> armee2){
+    vie-=d;
+    if (vie<0){
+        if(c==0)
+            armee1.pop_back();
+        else
+            armee2.pop_back();
+    }
+}
+
+
+
+
+
+

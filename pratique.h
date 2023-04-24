@@ -17,6 +17,7 @@ public:
     void avancer(vector<pratique> armee1,vector<pratique> armee2);
     void attaquer(pratique ennemi);
     void mourir(vector<pratique> armee1, vector<pratique> armee2);
+    void refresh(int degats, int c, vector<pratique> armee1, vector<pratique> armee2);
 };
 
 struct base{
