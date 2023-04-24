@@ -7,6 +7,7 @@
 #include<vector>
 using namespace std ;
 
+
 class pratique{
     int x;
     int vie;
@@ -14,12 +15,15 @@ class pratique{
     theorique proprietes;
 public:
     void creer(int pos,int c,vector<pratique> armee1,vector<pratique> armee2);
-    void avancer(vector<pratique> armee1,vector<pratique> armee2);
     void attaquer(pratique ennemi);
     void mourir(vector<pratique> armee1, vector<pratique> armee2);
     void refresh(int degats, int camp, vector<pratique> armee1, vector<pratique> armee2);
     bool reach(int xA,int portee);
+    int distance(pratique ennemi);
+    void pas(int p);
 };
+
+void avancer(vector<pratique> armee1,vector<pratique> armee2);
 
 struct base{
     int x0;
@@ -33,4 +37,5 @@ struct base{
     tourelle T2;
     tourelle T3;
 };
+
 
