@@ -7,7 +7,7 @@ find_package(Imagine REQUIRED)
 
 add_executable(Ageofwar main.cpp
     personnage.cpp liste.cpp
-    tourelle.h theorique.h interface.h pratique.h)
+    tourelle.h theorique.h interface.h interface.cpp pratique.h)
 ImagineUseModules(Ageofwar Graphics)
 
 

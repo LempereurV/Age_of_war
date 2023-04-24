@@ -3,3 +3,7 @@
 
 #endif // INTERFACE_H
 
+
+void affichage(int epoque){
+
+}
