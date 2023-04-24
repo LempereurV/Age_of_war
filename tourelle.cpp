@@ -9,6 +9,13 @@ tourelle::tourelle(int call_camp, int id){ // la clé id est le numero de la tou
     camp = call_camp;
 }
 
-void tourelle::tir_tourelle(vector<pratique> armee){
-    armee[0].refresh(data.degats);
+void tourelle::tir_tourelle(vector<pratique> armee1, vector<pratique> armee2){
+    if (camp==0){
+        if (true){return;}
+        armee2[0].refresh(data.degats, camp, armee1, armee2);
+    }
+    else{
+        if (true){return;}
+        armee1[0].refresh(data.degats, camp, armee1, armee2);
+    }
 }

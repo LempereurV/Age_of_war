@@ -17,7 +17,7 @@ struct tourelle{
     data_tourelle data;
 public:
     tourelle(int call_camp, int id);
-    void tir_tourelle(vector<pratique> armee);
+    void tir_tourelle(vector<pratique> armee1, vector<pratique> armee2);
 };
 
 int largeur = 100; // largeur en pixel de la scène
