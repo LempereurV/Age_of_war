@@ -1,20 +1,13 @@
-cmake_minimum_required(VERSION 3.14)
 
-project(Projet_test LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.4)
+project(Ageofwar)
+list(APPEND CMAKE_FRAMEWORK_PATH /Library/Frameworks) #Mac, why not auto?
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+find_package(Imagine REQUIRED)
 
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+add_executable(Ageofwar main.cpp
+    personnage.cpp liste.cpp
+    tourelle.h theorique.h interface.h pratique.h)
+ImagineUseModules(Ageofwar Graphics)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5Core)
-
-add_executable(Projet_test
-  main.cpp
-personnage.cpp liste.cpp
-tourelle.h theorique.h pratique.h)
-target_link_libraries(Projet_test Qt${QT_VERSION_MAJOR}::Core)
