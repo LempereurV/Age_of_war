@@ -11,9 +11,8 @@ struct theorique{
     int prime;
     double temps;
     int largeur;
-}
+};
 
-;
 
 #endif // LISTE_H
 
