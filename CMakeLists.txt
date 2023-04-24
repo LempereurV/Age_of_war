@@ -14,7 +14,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5Core)
 
 add_executable(Projet_test
-  main.cpp
-personnage.cpp liste.cpp
-tourelle.h theorique.h pratique.h)
+    main.cpp
+    personnage.cpp liste.cpp
+    theorique.h pratique.h
+    tourelle.h tourelle.cpp
+)
+
 target_link_libraries(Projet_test Qt${QT_VERSION_MAJOR}::Core)
