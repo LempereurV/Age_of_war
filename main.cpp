@@ -19,7 +19,7 @@ int main(){
         //******** Display ************
         if ((timeStep%freqDisplay)==0){
             noRefreshBegin();
-
+            avancer(armee1,armee2);
             noRefreshEnd();
             milliSleep(50);
         }

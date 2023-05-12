@@ -21,13 +21,13 @@ void pratique::creer(int pos, int c,vector<pratique> armee1,vector<pratique> arm
         armee2.push_back(soldat);
 };
 
-void pratique::avancer(vector<pratique> armee1, vector<pratique> armee2){
-    if(abs(armee1[0].x-armee2[0].x)<2){
+void avancer(vector<pratique> armee1, vector<pratique> armee2){
+    if(armee1[0].distance(armee2[0])>3){
         for (auto it = armee1.begin(); it != armee1.end(); ++it) {
-            x+=1;
+            (*it).pas(1);
         }
         for (auto it = armee2.begin(); it != armee2.end(); ++it){
-            x-=1;
+            (*it).pas(-1);
         }
     }
 }
@@ -59,8 +59,29 @@ void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> ar
 }
 
 bool pratique::reach(int xA,int p){
+    //xA: abscisse de celui qu'on considère et p sa portée
     return(abs(x-xA)<p);
 }
+
+int pratique::distance(pratique ennemi){
+    return abs(x-ennemi.x);
+}
+
+void pratique::pas(int d){
+    x+=d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
