@@ -58,7 +58,9 @@ void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> ar
     }
 }
 
-
+bool pratique::reach(int xA,int p){
+    return(abs(x-xA)<p);
+}
 
 
 
