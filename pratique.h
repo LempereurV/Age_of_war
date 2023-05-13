@@ -16,8 +16,8 @@ class pratique{
 public:
     void creer(int pos,int c,vector<pratique> armee1,vector<pratique> armee2);
     void attaquer(pratique ennemi);
-    void mourir(vector<pratique> armee1, vector<pratique> armee2);
-    void refresh(int degats, int camp, vector<pratique> armee1, vector<pratique> armee2);
+    void mourir(vector<pratique> armee1, vector<pratique> armee2,int argent[2]);
+    void refresh(int degats, int camp, vector<pratique> armee1, vector<pratique> armee2,int argent[2]);
     bool reach(int xA,int portee);
     int distance(pratique ennemi);
     void pas(int p);

@@ -1,11 +1,11 @@
 #include "theorique.h"
 
 theorique global[16]={
-    {40,7,0,3,1,15,20,1.5,2}, //clubman
+    {40,7,0,1,1,15,20,1.5,2}, //clubman
     {24,7,0,15,1.3,25,33,1.5,2}, //lance-pierre
-    {100,17,0,5,1,100,130,3,6}, //chevaucheur de dino
+    {100,17,0,1,1,100,130,3,6}, //chevaucheur de dino
     {65,14,1,1,1,50,65,2.5,2}, //épée
-    {80,14,20,1,1.3,75,98,2.5,2}, //arbalète
+    {80,14,1,20,1.3,75,98,2.5,2}, //arbalète
     {150,35,1,2,1,500,650,6,12}, //chevalier # temps = 3
     {100,30,2,1,1,200,260,3.5,2}, //duellier
     {120,44,2,20,1,400,520,3.5,2}, //mousquetaire
@@ -18,3 +18,4 @@ theorique global[16]={
     {8000,1000,4,3,0.7,20000,26000,9,12}, //tank du futur
     {6000,4000,4,15,1.5,150000,19000,9,2}, //soldat d'élite
  };
+//{vie, degats, epoque, portee, frequence, cout, prime, temps de chargement, (largeur)

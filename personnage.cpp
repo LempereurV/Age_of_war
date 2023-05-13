@@ -1,5 +1,6 @@
 #include "liste.cpp"
 #include "pratique.h"
+#include "theorique.h"
 #include <iostream>
 #include<vector>
 #include <unistd.h>
@@ -7,13 +8,14 @@ using namespace std ;
 
 void pratique::creer(int pos, int c,vector<pratique> armee1,vector<pratique> armee2){
     int x0=0;
-    if (camp==1)
+    if (c==1)
         x0=100;
     pratique soldat;
+    soldat.proprietes=global[pos];
     soldat.x=x0;
-    soldat.vie=global[pos].viemax;
+    soldat.vie=soldat.proprietes.viemax;
     soldat.camp=c;
-    sleep(proprietes.temps);
+    sleep(soldat.proprietes.temps);
     if(c==0){
         armee1.push_back(soldat);
     }
@@ -41,20 +43,21 @@ void pratique::attaquer(pratique ennemi){
     }
 }
 
-void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2){
-    if(camp==0)
+void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2,int argent[2]){
+    if(camp==0){
         armee1.pop_back();
-    else
+        argent[1]+=proprietes.prime;
+    }
+    else{
         armee2.pop_back();
+        argent[0]+=proprietes.prime;
+    }
 }
 
-void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> armee2){
+void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> armee2, int argent[2]){
     vie-=d;
     if (vie<0){
-        if(c==0)
-            armee1.pop_back();
-        else
-            armee2.pop_back();
+        mourir(armee1, armee2, argent);
     }
 }
 
