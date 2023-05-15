@@ -32,6 +32,8 @@ int main(){
             for (auto it = armee2.begin(); it != armee2.end(); ++it){
                 (*it).attaquer(armee1[0]);
             }
+            armee1[0].refresh(armee1,armee2,argent,base1,base2);
+            armee2[0].refresh(armee1,armee2,argent,base1,base2);
             noRefreshEnd();
             milliSleep(50);
         }

@@ -48,7 +48,7 @@ void pratique::attaquer(pratique ennemi){
 void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2,int argent[2],base base1, base base2){
     if(camp==0){
         armee1.pop_back();
-        argent[1]+=proprietes.prime;
+        argent[1]+=2*proprietes.prime;
         base2.exp+=proprietes.exp;
     }
     else{
@@ -58,8 +58,7 @@ void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2,int argen
     }
 }
 
-void pratique::refresh(int d, int c,vector<pratique> armee1, vector<pratique> armee2, int argent[2], base base1, base base2){
-    vie-=d;
+void pratique::refresh(vector<pratique> armee1, vector<pratique> armee2, int argent[2], base base1, base base2){
     if (vie<0){
         mourir(armee1, armee2, argent, base1, base2);
     }
