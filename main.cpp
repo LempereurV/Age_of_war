@@ -6,8 +6,8 @@ using namespace Imagine;
 using namespace std;
 #include"pratique.h"
 #include"theorique.h"
-#include"tourelle.h"
-#include"Interface.h"
+#include"liste.cpp"
+#include"Interface.h"=
 #include <ctime>
 
 const int freqDisplay = 100;
@@ -18,12 +18,22 @@ int main(){
     vector<pratique> armee2;
     int epoque=0;
     int argent[2]={175,175};
+    base base1;
+    base base2;
+    base1.exp=0;
+    base2.exp=0;
     for(int timeStep=0; timeStep<10000*freqDisplay; timeStep++) {
         //******** Display ************
         if ((timeStep%freqDisplay)==0){
             noRefreshBegin();
             affichage(epoque);
             avancer(armee1,armee2);
+            for (auto it = armee1.begin(); it != armee1.end(); ++it) {
+                (*it).attaquer(armee2[0]);
+            }
+            for (auto it = armee2.begin(); it != armee2.end(); ++it){
+                (*it).attaquer(armee1[0]);
+            }
             noRefreshEnd();
             milliSleep(50);
         }

@@ -11,6 +11,7 @@ struct theorique{
     int prime;
     double temps;
     int largeur;
+    int exp;
 };
 
 
