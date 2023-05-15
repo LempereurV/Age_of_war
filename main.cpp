@@ -5,9 +5,7 @@ using namespace Imagine;
 
 using namespace std;
 #include"pratique.h"
-#include"theorique.h"
-#include"liste.cpp"
-#include"Interface.h"=
+#include"Interface.h"
 #include <ctime>
 
 const int freqDisplay = 100;

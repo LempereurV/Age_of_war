@@ -1,10 +1,7 @@
-#include "liste.cpp"
 #include "pratique.h"
-#include "theorique.h"
 #include <iostream>
 #include<vector>
 #include <unistd.h>
-#pragma once
 using namespace std ;
 
 bool base::test_epoque(){

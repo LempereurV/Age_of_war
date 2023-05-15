@@ -1,9 +1,5 @@
-#ifndef PERSONNAGE_H
-#define PERSONNAGE_H
-
+#pragma once
 #include "theorique.h"
-#include "tourelle.h"
-#endif // PERSONNAGE_H
 #include<vector>
 using namespace std ;
 
@@ -32,8 +28,3 @@ public:
 };
 
 void avancer(vector<pratique> armee1,vector<pratique> armee2);
-bool test_epoque;
-
-
-
-

@@ -1,7 +1,4 @@
-#ifndef INTERFACE_H
-#define INTERFACE_H
-
+#pragma once
 
 void affichage(int epoque); // affiche la barre des choix
 
-#endif // INTERFACE_H
