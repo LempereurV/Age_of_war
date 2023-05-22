@@ -2,16 +2,25 @@
 using namespace Imagine;
 
 #include <iostream>
-
 using namespace std;
+
+#include <ctime>
+
 #include"pratique.h"
 #include"theorique.h"
 #include"tourelle.h"
-#include <ctime>
 
 const int freqDisplay = 100;
 
+int main(){
+    int W = 500, H = 500;
+    openWindow(W,H);
 
+}
+
+float start = static_cast<float>(std::time(nullptr)); // constante globale de l'heure de début
+
+/*
 int main(){
     vector<pratique> armee1;
     vector<pratique> armee2;
@@ -24,3 +33,4 @@ int main(){
             milliSleep(50);
         }
     }}
+*/
