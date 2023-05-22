@@ -3,15 +3,26 @@
 using namespace Imagine;
 
 #include <iostream>
-
 using namespace std;
+<<<<<<< HEAD
 using namespace Imagine;
+=======
+
+#include <ctime>
+
+>>>>>>> be70e6be04a664ae3e76ba4e9c25ad93615468a3
 #include"pratique.h"
+#include"theorique.h"
+#include"tourelle.h"
 #include"Interface.h"
 #include"theorique.h"
 #include <ctime>
 
 const int freqDisplay = 100;
+
+
+
+float start = static_cast<float>(std::time(nullptr)); // constante globale de l'heure de début
 
 
 int main(){
@@ -40,5 +51,4 @@ int main(){
             noRefreshEnd();
             milliSleep(50);
         }
-    }
-}
+
