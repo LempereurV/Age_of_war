@@ -1,4 +1,3 @@
-#ifndef ADVERSAIRE_H
-#define ADVERSAIRE_H
+#pragma once
 
-#endif // ADVERSAIRE_H
+void entr();

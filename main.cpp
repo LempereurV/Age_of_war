@@ -4,13 +4,10 @@ using namespace Imagine;
 
 #include <iostream>
 using namespace std;
-<<<<<<< HEAD
-using namespace Imagine;
-=======
+
 
 #include <ctime>
 
->>>>>>> be70e6be04a664ae3e76ba4e9c25ad93615468a3
 #include"pratique.h"
 #include"theorique.h"
 #include"tourelle.h"
@@ -51,4 +48,5 @@ int main(){
             noRefreshEnd();
             milliSleep(50);
         }
-
+    }
+}

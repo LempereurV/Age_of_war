@@ -8,22 +8,24 @@ bool base::test_epoque(){
     return (exp>requis[epoque]);
 }
 
-void pratique::creer(int pos, int c,vector<pratique> armee1,vector<pratique> armee2){
+void pratique::creer_soldat(int pos, int c){
     int x0=0;
     if (c==1)
         x0=100;
-    pratique soldat;
-    soldat.proprietes=global[pos];
-    soldat.x=x0;
-    soldat.vie=soldat.proprietes.viemax;
-    soldat.camp=c;
-    sleep(soldat.proprietes.temps);
-    if(c==0){
+    proprietes=global[pos];
+    x=x0;
+    vie= proprietes.viemax;
+    camp=c;
+    sleep( proprietes.temps);
+};
+
+void integ(int camp,vector<pratique> armee1,vector<pratique> armee2,pratique soldat){
+    if(camp==0){
         armee1.push_back(soldat);
     }
     else
         armee2.push_back(soldat);
-};
+}
 
 void avancer(vector<pratique> armee1, vector<pratique> armee2){
     if(armee1[0].distance(armee2[0])>1){
@@ -78,8 +80,6 @@ void pratique::pas(int d){
 }
 
 void creer_bases(int epoque, base base1, base base2){
-    base base1;
-    base base2;
     base1.exp=0;
     base2.exp=0;
     base1.argent=175;
