@@ -3,6 +3,7 @@
 
 #include "pratique.h"
 
+/*
 struct data_tourelle{
     int portee;
     double periode;
@@ -20,7 +21,7 @@ public:
     void tir_tourelle(vector<pratique> armee1, vector<pratique> armee2);
 };
 
-int largeur = 100; // largeur en pixel de la scène
+//int largeur = 100; // largeur en pixel de la scène
 
 data_tourelle global_t[16] = {
     {0, 1, 0, 0}, // Null /// PENSER A SES VISUELS NULS
@@ -40,6 +41,7 @@ data_tourelle global_t[16] = {
     {largeur, 0.75, 700, 40000}, // Lazer Canon
     {largeur, 0.5, 1250, 100000} // Ion Ray
 };
+*/
 
 
 #endif // TOURELLE_H

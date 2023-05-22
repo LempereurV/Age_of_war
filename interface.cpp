@@ -11,10 +11,10 @@ using namespace Imagine;
 
 
 void displayMenu(int epoque, int windowWidth, int windowHeight) { // affiche la barre des choix
-    // loading the menu w/ the picture menu2.png
+    // loading the menu w/ the picture menu3.png
     int W, H;
     byte *r,*g,*b;
-    loadColorImage(srcPath("menu2.png"), r, g, b, W, H);
+    loadColorImage(srcPath("menu3.png"), r, g, b, W, H);
 
     // afficher l'image
     putColorImage(windowWidth-W, 0, r, g, b, W, H);
@@ -38,9 +38,9 @@ void getSize(const string& filePath, int& width, int& height) { // récupérer l
 }
 
 void processClickAction(int x, int y, int epoque, int windowWidth, int windowHeight) {
-    int pos_x_menu = 0, pos_y_menu = 0, W_menu, H_menu; getSize(srcPath("menu2.png"), W_menu, H_menu); // récupérer la taille du menu
+    int pos_x_menu = 0, pos_y_menu = 0, W_menu, H_menu; getSize(srcPath("menu3.png"), W_menu, H_menu); // récupérer la taille du menu
     if (x>pos_x_menu && x<pos_x_menu+W_menu && y>pos_y_menu && y<pos_y_menu+H_menu) {
-        getActionMenu(x-pos_x_menu, y-pos_y_menu, epoque);
+        //getActionMenu(x-pos_x_menu, y-pos_y_menu, epoque);
     }
 }
 
@@ -53,7 +53,7 @@ void getActionMenu(int x, int y, int &epoque) { // effectue les actions du menu
             epoque+=1;
         }
         if (x<0 and x>1000){
-            drawString(100, 100, "Pas de spécial débloqué...");
+            //drawString(100, 100, "Pas de spécial débloqué...");
         }
     }
 }

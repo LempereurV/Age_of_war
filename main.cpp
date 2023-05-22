@@ -16,13 +16,15 @@ const int freqDisplay = 100;
 
 int main(){
     int W = 500, H = 500;
-    openWindow(W,H);
-
+    afficherBackground(W, H);
+    displayMenu(0, W, H);
+    endGraphics();
 }
 
+/*
 float start = static_cast<float>(std::time(nullptr)); // constante globale de l'heure de début
 
-/*
+
 int main(){
     vector<pratique> armee1;
     vector<pratique> armee2;
