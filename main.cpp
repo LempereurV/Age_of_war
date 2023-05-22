@@ -1,11 +1,14 @@
 #include <Imagine/Graphics.h>
+#include <Imagine/Images.h>
 using namespace Imagine;
 
 #include <iostream>
 
 using namespace std;
+using namespace Imagine;
 #include"pratique.h"
 #include"Interface.h"
+#include"theorique.h"
 #include <ctime>
 
 const int freqDisplay = 100;
@@ -15,11 +18,9 @@ int main(){
     vector<pratique> armee1;
     vector<pratique> armee2;
     int epoque=0;
-    int argent[2]={175,175};
     base base1;
     base base2;
-    base1.exp=0;
-    base2.exp=0;
+    creer_bases(epoque, base1, base2);
     for(int timeStep=0; timeStep<10000*freqDisplay; timeStep++) {
         //******** Display ************
         if ((timeStep%freqDisplay)==0){
@@ -32,9 +33,12 @@ int main(){
             for (auto it = armee2.begin(); it != armee2.end(); ++it){
                 (*it).attaquer(armee1[0]);
             }
-            armee1[0].refresh(armee1,armee2,argent,base1,base2);
-            armee2[0].refresh(armee1,armee2,argent,base1,base2);
+            armee1[0].refresh(armee1,armee2,base1,base2);
+            armee2[0].refresh(armee1,armee2,base1,base2);
+            base1.maj();
+            base2.maj();
             noRefreshEnd();
             milliSleep(50);
         }
-    }}
+    }
+}

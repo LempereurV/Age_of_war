@@ -36,3 +36,7 @@ static theorique global[16]={
 static int requis[4]={
     4000,12000,40000,120000
 };
+
+static int viecamp[5]={
+    500,1100,2000,3300,5000
+};

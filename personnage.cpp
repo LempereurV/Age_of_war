@@ -37,7 +37,7 @@ void avancer(vector<pratique> armee1, vector<pratique> armee2){
 }
 
 void pratique::attaquer(pratique ennemi){
-    if(abs(x-ennemi.x)<proprietes.portee){
+    if(reach(ennemi.x,proprietes.portee)){
         while(vie>0){
             ennemi.vie-=proprietes.force;
             sleep(proprietes.frequence/2);
@@ -45,22 +45,22 @@ void pratique::attaquer(pratique ennemi){
     }
 }
 
-void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2,int argent[2],base base1, base base2){
+void pratique::mourir(vector<pratique> armee1, vector<pratique> armee2,base base1, base base2){
     if(camp==0){
         armee1.pop_back();
-        argent[1]+=2*proprietes.prime;
+        base2.argent+=2*proprietes.prime;
         base2.exp+=proprietes.exp;
     }
     else{
         armee2.pop_back();
-        argent[0]+=proprietes.prime;
+        base2.argent+=proprietes.prime;
         base1.exp+=proprietes.exp;
     }
 }
 
-void pratique::refresh(vector<pratique> armee1, vector<pratique> armee2, int argent[2], base base1, base base2){
+void pratique::refresh(vector<pratique> armee1, vector<pratique> armee2, base base1, base base2){
     if (vie<0){
-        mourir(armee1, armee2, argent, base1, base2);
+        mourir(armee1, armee2, base1, base2);
     }
 }
 
@@ -77,18 +77,24 @@ void pratique::pas(int d){
     x+=d;
 }
 
+void creer_bases(int epoque, base base1, base base2){
+    base base1;
+    base base2;
+    base1.exp=0;
+    base2.exp=0;
+    base1.argent=175;
+    base2.argent=175;
+    base1.epoque=epoque;
+    base2.epoque=epoque;
+    base1.x0=0;
+    base2.x0=100;
+    base1.viemax=viecamp[epoque];
+    base2.viemax=viecamp[epoque];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void base::maj(){
+    if (test_epoque()){
+        epoque+=1;
+        viemax=viecamp[epoque];
+        vie=viemax-vie;}
+}
