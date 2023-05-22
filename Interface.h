@@ -1,6 +1,3 @@
-#ifndef INTERFACE_H
-#define INTERFACE_H
-
 #include <string>
 #include <iostream>
 using namespace std;
@@ -10,4 +7,3 @@ void getSize(const string& filePath, int& width, int& height);
 void processClickAction(int x, int y, int epoque, int windowWidth, int windowHeight);
 void getActionMenu(int x, int y, int epoque);
 
-#endif // INTERFACE_H
