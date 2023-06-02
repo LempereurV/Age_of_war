@@ -29,22 +29,29 @@ int main(){
     base base1;
     base base2;
     creer_bases(epoque, base1, base2);
+    int WindowWidth,WindowHeight=500*200;
     for(int timeStep=0; timeStep<10000*freqDisplay; timeStep++) {
         //******** Display ************
         if ((timeStep%freqDisplay)==0){
             noRefreshBegin();
-            affichage(epoque);
+            affichage_base(epoque,0,WindowWidth,WindowHeight);
+            affichage_base(epoque,1,WindowWidth,WindowHeight);
             avancer(armee1,armee2);
             for (auto it = armee1.begin(); it != armee1.end(); ++it) {
-                (*it).attaquer(armee2[0]);
+                (*it).attaquer(armee2[0],armee1,armee2,base1,base2);
             }
             for (auto it = armee2.begin(); it != armee2.end(); ++it){
-                (*it).attaquer(armee1[0]);
+                (*it).attaquer(armee1[0],armee1,armee2,base1,base2);
             }
-            armee1[0].refresh(armee1,armee2,base1,base2);
-            armee2[0].refresh(armee1,armee2,base1,base2);
-            base1.maj();
-            base2.maj();
+            //armee1[0].refresh(armee1,armee2,base1,base2);
+            //armee2[0].refresh(armee1,armee2,base1,base2);
+            base1.maj(WindowWidth,WindowHeight);
+            base2.maj(WindowWidth,WindowHeight);
+            for (auto it = armee1.begin(); it != armee1.end(); ++it) {
+                (*it).afficher_soldat();
+            }
+            for (auto it = armee2.begin(); it != armee2.end(); ++it){
+                (*it).afficher_soldat();
             noRefreshEnd();
             milliSleep(50);
         }

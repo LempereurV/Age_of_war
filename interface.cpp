@@ -57,3 +57,22 @@ void getActionMenu(int x, int y, int &epoque) { // effectue les actions du menu
         }
     }
 }
+
+void affichage_base(int epoque, int camp, int windowWidth, int windowHeight){
+    int W, H;
+    byte *r,*g,*b;
+    if (epoque==0)
+        loadColorImage(srcPath("Prehistoire_bas.png"), r, g, b, W, H);
+    if(epoque==1)
+        loadColorImage(srcPath("M-A_bas.png"), r, g, b, W, H);
+    if(epoque==2)
+        loadColorImage(srcPath("Renaissance_bas.png"), r, g, b, W, H);
+    if(epoque==3)
+        loadColorImage(srcPath("Contemporain_bas.png"), r, g, b, W, H);
+    if(epoque==4)
+        loadColorImage(srcPath("Futur_bas.png"), r, g, b, W, H);
+    if(camp==0)
+        putColorImage(0, 0, r, g, b, W, H);
+    if(camp==1)
+        putColorImage(windowWidth, 0, r, g, b, W, H);
+}
