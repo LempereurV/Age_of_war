@@ -14,17 +14,19 @@ void getSize(const string& filePath, int& width, int& height);
 // fonctions d'affichages spécifiques
 void displayMenu(int windowWidth); // affiche la barre des choix
 void displayMenuCharac(int epoque, int windowWidth, int windowHeight); // affiche la barre des choix des personnages
-void displayBase(int epoque1, int epoque2); // affiche les deux bases
+void displayBase(base base1, base base2); // affiche les bases
 void displayPers(int index); // affiche le personnage d'indice index (pers_index)
 void afficherBackground(Window& window, int& width, int& height, int index, bool affiche); // affiche le background des Ponts
-void displaySoldiers(vector<pratique> armee, int time);
+void eraseVie(int _camp_);
+void displaySoldiers(vector<pratique> armee, int time, int camp);
 void displayBaseHealth(base base1, base base2);
 void displayEmptyBarre();
+void displayExp(base base1);
 
 // Initializer
 void initializeVisuals(int W, int epoque1, int epoque2, base base1, base base2, int& initialize, bool& test_initialize);
 
 // fonctions d'actions d'affichages
-void getActionMenu(int& x, int& y, int& epoque, int& etat, int time, vector<pratique>& armee1, base& base1, int& nbSpecial, int& initialize, bool& test_initialize, int windowWidth, int windowHeight, Window& window);
+void getActionMenu(int& x, int& y, int& etat, int time, vector<pratique>& armee1, base& base1, base& base2, int& nbSpecial, int& initialize, bool& test_initialize, int windowWidth, int windowHeight, Window& window);
 
 

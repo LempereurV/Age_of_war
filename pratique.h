@@ -38,9 +38,14 @@ public:
     int get_camp();
     int get_index();
     double get_time_pop();
-    double get_duree_formation();
+    double get_duree_formation() {return proprietes.temps;};
+    int get_force() {return proprietes.force;};
+    int get_vie() {return vie;};
+    int get_exp() {return proprietes.exp;} // renvoie l'experience de la mort du perso
+    int get_largeur() {return proprietes.largeur;}
     // fonction d'update
     void update_x(int _x_);
+    void update_vie(int _degats_);
     // fonction d'action
     void attaquer(pratique ennemi);
     void mourir(vector<pratique> armee1, vector<pratique> armee2, int argent[2], base base1, base base2);
@@ -50,8 +55,11 @@ public:
     void pas(int p);
 };
 
-// Fonctions d'action sur la classe
-void avancer(vector<pratique> armee1,vector<pratique> armee2);
-void avance(vector<pratique>& armee, bool contact);
-void moveSoldiers(vector<pratique>& armee1,vector<pratique>& armee2);
-void test_x(vector<pratique> armee);
+
+const int _vie_[5] = {500, 1100, 2000, 3200, 4700}; // liste des vies maximales de la base par époque
+const int _exp_[5] = {4000, 14000, 45000, 200000};  // liste des experiences nécessaires pour changer d'apoque
+
+
+// Fonctions d'action sur la classe=
+void avance(vector<pratique>& armee, bool contact, double time);
+void moveSoldiers(vector<pratique>& armee1,vector<pratique>& armee2, base& base1, base& base2, double time);
