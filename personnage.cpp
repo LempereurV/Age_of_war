@@ -73,6 +73,7 @@ int pratique::get_x() {return x;}                   // return the position x whi
 int pratique::get_camp() {return camp;}             // return the camp
 int pratique::get_index() {return index;}           // return the index type of the soldier
 double pratique::get_time_pop() {return time_pop;}  // return the time from which to display the soldier
+double pratique::get_duree_formation() {return proprietes.temps;}
 
 // FONCTIONS D'ACTUALISATION
 void pratique::update_x(int _x_) {x = _x_;}         // actualize the position
@@ -170,7 +171,6 @@ void moveSoldiers(vector<pratique>& armee1,vector<pratique>& armee2) {
         //avance(armee1, true);
         //avance(armee2, true);
     } else {
-        cout << "etape1" << endl;
         // Tout le monde avance : il n'y a pas contact ⇒ contact = false
         avance(armee1, false);
         //test_x(armee1);

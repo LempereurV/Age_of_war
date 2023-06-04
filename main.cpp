@@ -32,6 +32,18 @@ bool getMouseNonBlocking(Window W, int& x, int& y) {
 
 void refresh(int z, int& Z){if(z!=0){Z=z;}}
 
+void background(Window window, int W, int H, int epoque1, int epoque2, base base1, base base2, int& initialize, bool& test_initialize) {
+    if (initialize*test_initialize >= 5){
+        afficherBackground(window, W, H, 0, false);
+        displayMenu(W);                  // affichage du menu
+        displayBase(epoque1, epoque2);   // affichage des bases
+        displayBaseHealth(base1, base2); // affiche les bases
+        displayEmptyBarre();
+        test_initialize = false;
+    }
+    initialize++;
+}
+
 int main(){
     Window window;
     int W, H;
@@ -46,14 +58,18 @@ int main(){
     base base2;
 
     // First display
-    displayMenu(W);     // affichage du menu
-    displayBase(epoque1, epoque2);  // affichage des bases
+    //initializeVisuals(W, epoque1, epoque2, base1, base2, initialize, test_initialize);
+    displayMenu(W);                  // affichage du menu
+    displayBase(epoque1, epoque2);   // affichage des bases
     displayBaseHealth(base1, base2); // affiche les bases
+    displayEmptyBarre();             // affiche la barre de chargement de personnages
 
     // game
     base1.exp = 1000000; // A RETIRER
     double n = 0; // variable incrémentale de temps
+    int nbSpecial = 1;
     int X, Y, clicX, clicY;
+    int initialize=0; bool test_initialize=false;
     while (true) {
         // Verifications itératives
         getMouseNonBlocking(window, X, Y);
@@ -61,9 +77,11 @@ int main(){
         drawCircle(clicX, clicY, 3, RED);
 
         // Affichages incrémentaux
-        getActionMenu(X, Y, epoque1, etat, n, armee1, base1, W, H, window);
+        background(window, W, H, epoque1, epoque2, base1, base2, initialize, test_initialize);
+        getActionMenu(X, Y, epoque1, etat, n, armee1, base1, nbSpecial, initialize, test_initialize, W, H, window);
         displayBaseHealth(base1, base2);
-        displaySoldiers(armee1, armee2, n);
+        displaySoldiers(armee1, n);
+        displaySoldiers(armee2, n);
         moveSoldiers(armee1, armee2);
 
         // Decompte

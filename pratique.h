@@ -38,6 +38,7 @@ public:
     int get_camp();
     int get_index();
     double get_time_pop();
+    double get_duree_formation();
     // fonction d'update
     void update_x(int _x_);
     // fonction d'action
