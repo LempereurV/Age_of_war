@@ -1,3 +1,18 @@
+   /*
+   Ce projet a été réalisé par                               :
+                      ↪ Vianney De Monicault ↩
+                        ♣ Mathieu Carrière ♣
+
+   dans le cadre de l'Atelier de Programmation supervisé par :
+                       ⊛✻⊛ Pascal Monasse ⊛✻⊛
+
+   Objet : Réalisation d'une adaptation du jeu "Age of War,
+   a game by Louissi" au thème des Ponts et à hauteur des compétences engagées.
+   */
+
+
+
+
 #include <Imagine/Images.h>
 #include <Imagine/Graphics.h>
 using namespace Imagine;
@@ -12,8 +27,7 @@ using namespace std;
 #include "pratique.h"
 #include "theorique.h"
 
-
-const int freqDisplay = 100;
+/* ================================================= FONCTIONS GÉNÉRALES ======================================================= */
 
 // Fonction de saisie de souris non bloquante
 bool getMouseNonBlocking(Window W, int& x, int& y) {
@@ -32,8 +46,12 @@ bool getMouseNonBlocking(Window W, int& x, int& y) {
     return false; // Ignorer les autres types d'événements ou événements hors de la fenêtre
 }
 
+
+// Chargement des informations du clic dans une autre variable
 void refresh(int z, int& Z){if(z!=0){Z=z;}}
 
+
+// Rechargement occasionnel du fond
 void background(Window window, int W, int H, base base1, base base2, int& initialize, bool& test_initialize) {
     if (initialize*test_initialize >= 5){
         afficherBackground(window, W, H, 0, false);
@@ -45,39 +63,9 @@ void background(Window window, int W, int H, base base1, base base2, int& initia
     }
     initialize++;
 }
-/*
-int main(){
-    for (int i=0; i<10000; i++)
-        cout<<lognormalDistribution()<<endl;
-    return 0;
-}
-*/
-/*
-int main(){
-    int steps[4];
-    srand(time(NULL)); ageSteps(steps); ageSteps(steps); // pour avoir plus de variété...
-    base base1;
-    base base2;
-    //for (int i=0; i<500; i++){
-    //    base1.exp+=1000;
-    //    cout << base1.exp << " " << base1.epoque << " " << base2.exp << " " << base2.epoque << endl;
-    //    ageChange(base1, base2, steps);
-    //}
-    for (int i=0; i<4; i++){
-        cout << steps[i] << " - ";
-    }
-    cout << endl;
-    //for (int i=0; i<4; i++){
-    //    cout << _exp_[i] << " - ";
-    //}
-    //cout << endl;
-    for (int i=0; i<1; i++){
-        base1.exp = rand()%100000;
-        cout << base1.exp  << " " << selec_i(base1, steps) << endl;
-    }
-}
-*/
 
+
+/* =================================================== FONCTIONS MAIN ========================================================== */
 
 int main(){
     Window window;
@@ -155,7 +143,44 @@ int main(){
 }
 
 
+/* ==================================================== ZONE EXPÉRMIENTALE ===================================================== */
+
 /*
+int main(){
+    for (int i=0; i<10000; i++)
+        cout<<lognormalDistribution()<<endl;
+    return 0;
+}
+*/
+
+/*
+int main(){
+    int steps[4];
+    srand(time(NULL)); ageSteps(steps); ageSteps(steps); // pour avoir plus de variété...
+    base base1;
+    base base2;
+    //for (int i=0; i<500; i++){
+    //    base1.exp+=1000;
+    //    cout << base1.exp << " " << base1.epoque << " " << base2.exp << " " << base2.epoque << endl;
+    //    ageChange(base1, base2, steps);
+    //}
+    for (int i=0; i<4; i++){
+        cout << steps[i] << " - ";
+    }
+    cout << endl;
+    //for (int i=0; i<4; i++){
+    //    cout << _exp_[i] << " - ";
+    //}
+    //cout << endl;
+    for (int i=0; i<1; i++){
+        base1.exp = rand()%100000;
+        cout << base1.exp  << " " << selec_i(base1, steps) << endl;
+    }
+}
+*/
+
+/*
+const int freqDisplay = 100;
 float start = static_cast<float>(std::time(nullptr)); // constante globale de l'heure de début
 
 

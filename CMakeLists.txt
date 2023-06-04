@@ -29,3 +29,7 @@ ImagineUseModules(Ageofwar Images)
 #      ☐ • Bagarre (1h)
 #      ☐ • Blood droplets (~)
 #      ☐ • Meteorite Rain (1/2h)
+
+# Pistes d'amélioration :
+#   → Faire de pratique une structure pour pouvoir avoir ses privates atteignables plus facilement
+#   → Ajouter le "vector<pratique> _army_" dans la structure de "base"

@@ -1,5 +1,6 @@
 #pragma once
 
+// Données théoriques recueillies en jeu
 struct theorique{
     int viemax;
     int force;
@@ -31,14 +32,3 @@ static theorique global[16]={
     {8000,1000,4,3,0.7,20000,26000,9,12,7000}, //tank du futur
     {6000,4000,4,15,1.5,150000,19000,9,2,10000}, //soldat d'élite
  };
-//{vie, degats, epoque, portee, frequence, cout, prime, temps de chargement, (largeur)
-
-/*
-static int requis[4]={
-    4000,12000,40000,120000
-};
-
-static int viecamp[5]={
-    500,1100,2000,3300,5000
-};
-*/

@@ -1,4 +1,3 @@
-#include <fstream>
 #include <string>
 #include <iostream>
 using namespace std;
@@ -11,10 +10,13 @@ using namespace Imagine;
 #include "pratique.h"
 
 
-/* =========================================================================================================================================== */
 
-void displayPicture(const std::string & file, bool debut, int windowWidth, int windowHeight, int positionX, int positionY) { // affiche la barre des choix
-    /* bool debut pour définir si positionX et positionY sont les ancrages à (0,0) ou (windowWidth, windowHeight) */
+
+/* ================================================== ~~~~ FONCTIONS GÉNÉRIQUES ~~~~ ============================================== */
+
+// affiche une image renseignée
+// bool debut pour définir si positionX et positionY sont les ancrages à (0,0) ou (windowWidth, windowHeight)
+void displayPicture(const std::string& file, bool debut, int windowWidth, int windowHeight, int positionX, int positionY) {
     // loading the picture
     int W, H;
     byte *r, *g, *b;
@@ -23,9 +25,10 @@ void displayPicture(const std::string & file, bool debut, int windowWidth, int w
     // afficher l'image
     if (debut){
         putColorImage(min(windowWidth, positionX), min(windowHeight, positionY), r, g, b, W, H);
-    }else{
+    } else {
         putColorImage(max(windowWidth - positionX, 0), max(windowHeight - positionY, 0), r, g, b, W, H);
     }
+
     // delete
     delete[] r;
     delete[] g;
@@ -33,7 +36,8 @@ void displayPicture(const std::string & file, bool debut, int windowWidth, int w
 }
 
 
-void getSize(const string& filePath, int& width, int& height) { // récupérer la taille d'une image (par un moyen lourd mais pas vraiment trouvé mieux)
+// récupérer la taille d'une image (par un moyen lourd mais pas vraiment trouvé mieux)
+void getSize(const string& filePath, int& width, int& height) {
     byte *r,*g,*b;
     loadColorImage(filePath, r, g, b, width, height);
     delete[] r;
@@ -42,7 +46,9 @@ void getSize(const string& filePath, int& width, int& height) { // récupérer l
 }
 
 
-/* =========================================================================================================================================== */
+
+
+/* ================================================= ~~~~ FONCTIONS D'AFFICHAGE ~~~~ ============================================== */
 
 void displayMenu(int windowWidth) { // affiche la barre des choix
         // loading the menu w/ the picture menuGeneral.png
@@ -189,7 +195,9 @@ void displayExp(base base1) {
 }
 
 
-/* =========================================================================================================================================== */
+
+
+/* ============================================ ~~~~ FONCTIONS D'ACTION/DE CHOIX ~~~~ ============================================= */
 
 void getActionMenu(int& x, int& y, int& etat, int time,
                    vector<pratique>& armee1, base& base1, base& base2, /* armée et base */

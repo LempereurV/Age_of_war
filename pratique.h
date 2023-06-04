@@ -1,7 +1,10 @@
 #pragma once
+
 #include "theorique.h"
 #include<vector>
 using namespace std ;
+
+
 
 // Structure pour les informations de la base
 struct base{
@@ -19,6 +22,9 @@ struct base{
     bool test_epoque();
     void update_viemax(int epoque);
 };
+
+
+
 
 // Structure pour les personnages en pratique
 class pratique{
@@ -60,6 +66,6 @@ const int _vie_[5] = {500, 1100, 2000, 3200, 4700}; // liste des vies maximales 
 const int _exp_[5] = {4000, 14000, 45000, 200000};  // liste des experiences nécessaires pour changer d'apoque
 
 
-// Fonctions d'action sur la classe=
+// Fonctions d'action sur la classe pratique
 void avance(vector<pratique>& armee, bool contact, double time);
 void moveSoldiers(vector<pratique>& armee1,vector<pratique>& armee2, base& base1, base& base2, double time);

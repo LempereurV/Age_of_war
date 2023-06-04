@@ -13,7 +13,7 @@ using namespace std;
 
 /* =================================== ~~~~~~ OBSOLETE GESTION DU TEMPS ~~~~~~ =================================================*/
 
-void timeNextPlay(float &next_play, float max) {
+void timeNextPlay(float &next_play, float max){
     // Générer un nombre flottant aléatoire entre 0.0 et max (secondes)
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -78,6 +78,7 @@ double lognormalDistribution() {
     return 3*distribution(gen);
 }
 
+// Selection de l'indice des soldats possibles
 int selec_i(base base1, int steps[4]) {
     int exp[15];
     exp[0] = 0; exp[1] = steps[0]/3; exp[2] = 2*steps[0]/3;
