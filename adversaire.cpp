@@ -21,8 +21,8 @@ void playAdversaire(int epoque,vector<pratique> armee1,vector<pratique> armee2){
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribution(3*epoque, 3*epoque+3);
     int pos = distribution(gen);
-    soldat.creer_soldat(pos,1);
-    integ(1,armee1,armee2,soldat);
+    //soldat.creer_soldat(pos,1);
+    //integ(1,armee1,armee2,soldat);
 }
 
 void decisionAdversaire(float next_play, int epoque,vector<pratique> armee1,vector<pratique> armee2){
