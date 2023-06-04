@@ -143,7 +143,7 @@ void combat(vector<pratique>& armee1,vector<pratique>& armee2, base& base1) {
         armee1.erase(armee1.begin());
     }
     if (armee2[0].get_vie() <= 0){
-        base1.exp+=10*armee2[0].get_exp();
+        base1.exp+=20*armee2[0].get_exp();
         armee2.erase(armee2.begin());
     }
 }

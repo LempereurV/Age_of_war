@@ -62,7 +62,8 @@ void ageChange(base base1, base& base2, int steps[4]) {
     if (base1.exp > steps[base2.epoque]){
         // On a une experience supérieure à celle
         // nécessaire de passage de l'époque adversaire
-        base2.viemax= _vie_[base2.epoque++];
+        base2.epoque++;
+        base2.viemax= _vie_[base2.epoque];
     }
 }
 

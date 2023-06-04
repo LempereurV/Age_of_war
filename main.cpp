@@ -126,6 +126,7 @@ int main(){
         // Decompte
         n+= 0.3;
         milliSleep(50);
+        cout << base2.viemax << endl;
 
         cout<<endl;cout<<endl;cout<<endl;cout<<endl;cout<<endl;cout<<endl;
     }
